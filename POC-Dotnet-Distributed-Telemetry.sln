@@ -1,0 +1,86 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.32804.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Service", "src\Demo.Service\Demo.Service.csproj", "{66D19907-9801-4DCA-8880-B2E431D5824B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.WebApp", "src\Demo.WebApp\Demo.WebApp.csproj", "{B8F3048A-20BC-425F-9A52-9B48776B8C7F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Worker", "src\Demo.Worker\Demo.Worker.csproj", "{DC0C7E7B-814D-448D-B53F-D1126858CFA0}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{85445485-EC89-4B05-B5CF-D290CCD9DDBB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Shared", "src\Demo.Shared\Demo.Shared.csproj", "{40B1E319-0A9C-4E5C-836B-550631145535}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{51452AD4-2343-4710-91F8-E40581F82C7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{65C02C36-DD09-44E4-BD30-A66C1B9AE7F1}"
+	ProjectSection(SolutionItems) = preProject
+		docs\collector-tracing.puml = docs\collector-tracing.puml
+		ReadMe.md = ReadMe.md
+		docs\tracing-complexity.puml = docs\tracing-complexity.puml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{769453EB-6A9E-49A9-BD93-D0A3EBD5A7BF}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\deploy-infrastructure.ps1 = scripts\deploy-infrastructure.ps1
+		scripts\remove-infrastructure.ps1 = scripts\remove-infrastructure.ps1
+		scripts\start-collector-demo.ps1 = scripts\start-collector-demo.ps1
+		scripts\start-collector-demo.sh = scripts\start-collector-demo.sh
+		scripts\start-complex-demo.sh = scripts\start-complex-demo.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{C0CAC435-402E-4E9E-843F-122D88B03E3E}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\infrastructure\0001 - create resource group.ps1 = scripts\infrastructure\0001 - create resource group.ps1
+		scripts\infrastructure\0002 - create log analytics.ps1 = scripts\infrastructure\0002 - create log analytics.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{C8CA85F4-9D93-4C0E-B02D-F8EB8B461622}"
+	ProjectSection(SolutionItems) = preProject
+		config\loki-config.yaml = config\loki-config.yaml
+		config\otel-collector-config.yaml = config\otel-collector-config.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66D19907-9801-4DCA-8880-B2E431D5824B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D19907-9801-4DCA-8880-B2E431D5824B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D19907-9801-4DCA-8880-B2E431D5824B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D19907-9801-4DCA-8880-B2E431D5824B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8F3048A-20BC-425F-9A52-9B48776B8C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8F3048A-20BC-425F-9A52-9B48776B8C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8F3048A-20BC-425F-9A52-9B48776B8C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8F3048A-20BC-425F-9A52-9B48776B8C7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC0C7E7B-814D-448D-B53F-D1126858CFA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC0C7E7B-814D-448D-B53F-D1126858CFA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC0C7E7B-814D-448D-B53F-D1126858CFA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC0C7E7B-814D-448D-B53F-D1126858CFA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85445485-EC89-4B05-B5CF-D290CCD9DDBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85445485-EC89-4B05-B5CF-D290CCD9DDBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85445485-EC89-4B05-B5CF-D290CCD9DDBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85445485-EC89-4B05-B5CF-D290CCD9DDBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40B1E319-0A9C-4E5C-836B-550631145535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40B1E319-0A9C-4E5C-836B-550631145535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40B1E319-0A9C-4E5C-836B-550631145535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40B1E319-0A9C-4E5C-836B-550631145535}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{66D19907-9801-4DCA-8880-B2E431D5824B} = {51452AD4-2343-4710-91F8-E40581F82C7D}
+		{B8F3048A-20BC-425F-9A52-9B48776B8C7F} = {51452AD4-2343-4710-91F8-E40581F82C7D}
+		{DC0C7E7B-814D-448D-B53F-D1126858CFA0} = {51452AD4-2343-4710-91F8-E40581F82C7D}
+		{40B1E319-0A9C-4E5C-836B-550631145535} = {51452AD4-2343-4710-91F8-E40581F82C7D}
+		{C0CAC435-402E-4E9E-843F-122D88B03E3E} = {769453EB-6A9E-49A9-BD93-D0A3EBD5A7BF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {28E364E0-EE0A-49FF-9D53-BD236CB127FB}
+	EndGlobalSection
+EndGlobal

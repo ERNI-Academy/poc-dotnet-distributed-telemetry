@@ -1,0 +1,38 @@
+version: '3.4'
+
+services:
+  postgres:
+    image: postgres:14.2
+
+  postgres-adminer:
+    image: adminer
+
+  rabbitmq:
+    image: rabbitmq:3-management
+
+  jaeger:
+    image: 'jaegertracing/all-in-one:1.29'
+
+  loki-minio:
+    image: minio/minio
+
+  loki:
+    depends_on:
+      - loki-minio
+    image: grafana/loki:2.5.0
+
+  grafana:
+    depends_on:
+      - loki
+    image: grafana/grafana:latest
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:latest
+    command: ["--config=/etc/otel-collector-config.yaml"]
+    volumes:
+      - ./output:/etc/output:rw
+      - ./config/otel-collector-config.yaml:/etc/otel-collector-config.yaml
+    ports:
+      - "4317:4317"   # OTLP gRPC receiver
+    depends_on:
+      - jaeger

@@ -1,0 +1,69 @@
+@startuml
+
+left to right direction
+skinparam handwritten true
+skinparam useBetaStyle true
+<style>
+    component
+    {
+        backgroundColor white
+    }
+    component, database, queue, rectangle {
+        lineThickness 2
+    }
+    .ui {
+        lineStyle 2
+    }
+</style>
+
+component Demo.WebApp {
+    rectangle webapp_exporter as "OTLP Exporter" #ffffff
+}
+component Demo.Service {
+    rectangle service_exporter as "OTLP Exporter" #ffffff
+}
+component Demo.Worker {
+    rectangle worker_exporter as "OTLP Exporter" #ffffff
+}
+
+rectangle otel_collector as "OpenTelemetry\nCollector"
+
+rectangle Loki [
+    Loki
+    (logs)
+]
+rectangle Grafana
+rectangle MinIO
+rectangle Jaeger [
+    Jaeger
+    (traces)
+]
+
+rectangle azure as "Azure" {
+    cloud azure_monitor [
+        Azure Monitor
+        (traces, logs)
+    ]
+}
+
+webapp_exporter -- otel_collector
+service_exporter -- otel_collector
+worker_exporter -- otel_collector
+
+otel_collector -- Jaeger
+otel_collector -- Loki
+Loki -- Grafana
+Loki --- MinIO
+
+'otel_collector -- Prometheus
+otel_collector -- azure_monitor
+
+'cloud nr_otlp [
+'    NewRelic
+'    (traces, logs)
+']
+'webapp_exporter -- nr_otlp
+'service_exporter -- nr_otlp
+'worker_exporter -- nr_otlp
+
+@endml
