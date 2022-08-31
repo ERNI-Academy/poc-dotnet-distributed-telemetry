@@ -1,5 +1,5 @@
 ﻿namespace Demo.Shared.Messages;
-public interface WeatherMessage
+public interface IWeatherMessage
 {
     string Note { get; }
 }

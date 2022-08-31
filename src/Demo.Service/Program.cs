@@ -62,7 +62,14 @@ builder.Services.AddOpenTelemetryTracing(tracerProviderBuilder =>
                          .AddConsoleExporter();
 });
 
-builder.Services.AddDbContext<WeatherContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("WeatherContext")));
+builder.Services.AddDbContext<WeatherContext>(options =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("WeatherContext") ?? string.Empty;
+    if (!string.IsNullOrWhiteSpace(connectionString))
+    {
+        options.UseNpgsql(connectionString);
+    }
+});
 
 var app = builder.Build();
 
