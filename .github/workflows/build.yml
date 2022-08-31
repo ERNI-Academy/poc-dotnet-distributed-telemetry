@@ -52,7 +52,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_API }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"ERNI-Academy_poc-dotnet-distributed-telemetry" /o:"erni-academy" /n:"starterkit-angular-and-dotnet-api_api"  /d:sonar.login="${{ secrets.SONAR_TOKEN_API }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.dotnet.excludeTestProjects="true"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"ERNI-Academy_poc-dotnet-distributed-telemetry" /o:"erni-academy" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.dotnet.excludeTestProjects="true"
           dotnet restore .\POC-Dotnet-Distributed-Telemetry.sln
           dotnet build .\POC-Dotnet-Distributed-Telemetry.sln --configuration Release --no-restore
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN_API }}"
+          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
