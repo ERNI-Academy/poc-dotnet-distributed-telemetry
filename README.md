@@ -431,8 +431,7 @@ Please see our [Contribution Guide](CONTRIBUTING.md) to learn how to contribute.
 Please see our [Code of Conduct](CODE_OF_CONDUCT.md)
 
 ## Stats
-
-Check [https://repobeats.axiom.co/](https://repobeats.axiom.co/) for the right URL
+![https://repobeats.axiom.co/api/embed/9edd500d800670de009832156a5ef438d92c00fa.svg](https://repobeats.axiom.co/api/embed/9edd500d800670de009832156a5ef438d92c00fa.svg)
 
 ## Follow us
 
