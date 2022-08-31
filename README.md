@@ -2,6 +2,18 @@
 
 Example of distributed tracing in .NET, using W3C Trace Context and OpenTelemetry.
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg)](#contributors)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+[![SonarCloud Scan API](https://github.com/ERNI-Academy/poc-dotnet-distributed-telemetry/actions/workflows/build.yml/badge.svg)](https://github.com/ERNI-Academy/poc-dotnet-distributed-telemetry/actions/workflows/build.yml)
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ERNI-Academy_poc-dotnet-distributed-telemetry&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ERNI-Academy_poc-dotnet-distributed-telemetry)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=ERNI-Academy_poc-dotnet-distributed-telemetry&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=ERNI-Academy_poc-dotnet-distributed-telemetry)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ERNI-Academy_poc-dotnet-distributed-telemetry&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=ERNI-Academy_poc-dotnet-distributed-telemetry)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=ERNI-Academy_poc-dotnet-distributed-telemetry&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=ERNI-Academy_poc-dotnet-distributed-telemetry)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=ERNI-Academy_poc-dotnet-distributed-telemetry&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=ERNI-Academy_poc-dotnet-distributed-telemetry)
+
 ## OpenTelemetry Collector example
 
 With many instrumented components, and many destinations, you can quickly get complex many-to-many connections (as can be seen in the complex OpenTelemetry example, with only three components and two destinations).
